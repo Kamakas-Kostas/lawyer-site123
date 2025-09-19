@@ -65,7 +65,7 @@ export default function HomePage() {
           <h2 className="text-3xl font-bold text-center mb-12">
             {practice("title")}
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             {practiceAreas.map((key) => {
               const descKey = `${key}Desc` as PracticeDescKey;
               return (
@@ -80,9 +80,7 @@ export default function HomePage() {
                   <h3 className="text-xl font-semibold mb-3">
                     {practice(key)}
                   </h3>
-                  <p className="text-gray-600 text-sm">
-                    {practice(descKey)}
-                  </p>
+                  <p className="text-gray-600 text-sm">{practice(descKey)}</p>
                 </motion.div>
               );
             })}
@@ -101,13 +99,15 @@ export default function HomePage() {
         <h2 className="text-3xl font-bold text-center mb-8">
           {contact("title")}
         </h2>
-        <p className="text-center text-gray-500 mb-8">{contact("subtitle")}</p>
+        <p className="text-center text-gray-500 mb-8">
+          {contact("subtitle")}
+        </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
           {/* Map */}
           <div className="rounded-lg overflow-hidden shadow-lg h-80">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3164.761279870517!2d22.417!3d39.639!..."
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3075.8512895934093!2d22.414!3d39.639!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a76d9b8bb2c68d%3A0xb1a91ff6e71ebf47!2sGounari%2021%2C%20Larisa%20412%2021!5e0!3m2!1sel!2sgr!4v1695045600000!5m2!1sel!2sgr"
               width="100%"
               height="100%"
               style={{ border: 0 }}
@@ -118,23 +118,23 @@ export default function HomePage() {
 
           {/* Info */}
           <div className="space-y-4 text-lg">
-            <p>📍 Γούναρη 21, Λάρισα 41221</p>
+            <p>📍 {contact("address")}</p>
             <p>
               📧{" "}
               <a
-                href="mailto:thanasismpakas@yahoo.com"
+                href={`mailto:${contact("email")}`}
                 className="text-yellow-600 hover:underline"
               >
-                thanasismpakas@yahoo.com
+                {contact("email")}
               </a>
             </p>
             <p>
               📞{" "}
               <a
-                href="tel:+306987790165"
+                href={`tel:${contact("phone")}`}
                 className="text-yellow-600 hover:underline"
               >
-                6987790165
+                {contact("phone")}
               </a>
             </p>
 
@@ -142,7 +142,7 @@ export default function HomePage() {
               href="/contact"
               className="inline-block mt-4 px-6 py-2 bg-yellow-600 text-white rounded shadow hover:bg-yellow-700 transition"
             >
-              ➤ Τρόποι Επικοινωνίας
+              {contact("button")}
             </Link>
           </div>
         </div>

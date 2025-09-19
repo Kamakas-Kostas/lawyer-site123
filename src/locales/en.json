@@ -7,37 +7,78 @@
     "contact": "Contact"
   },
   "home": {
-    "heroTitle": "Bakás Law Office",
+    "heroTitle": "Bakas Law Office",
     "heroSubtitle": "Trust – Experience – Effectiveness",
     "bioTitle": "Biography",
-    "bioText": "With more than 20 years of experience, our office provides high-level legal services, focusing on the client and resolving their cases."
+    "bioText": "With more than 20 years of experience, our office provides high-level legal services, focusing on clients and the resolution of their cases."
   },
   "practice": {
     "title": "Practice Areas",
     "area1": "Criminal Law",
     "area1Desc": "Defense and representation in criminal cases.",
     "area2": "Civil Law",
-    "area2Desc": "Contracts, property disputes, family law matters.",
+    "area2Desc": "Contracts, property disputes, family law.",
     "area3": "Labor Law",
-    "area3Desc": "Employee rights, contracts, and compensations.",
+    "area3Desc": "Employee rights, contracts and compensations.",
     "area4": "New Technologies & Law",
     "area4Desc": "Legal challenges in new technologies and artificial intelligence."
   },
   "contact": {
     "title": "Contact",
-    "subtitle": "Fill out the form and we will contact you shortly.",
-    "form": {
-      "name": "Full Name",
-      "email": "Email",
-      "message": "Message",
-      "submit": "Send",
-      "sent": "Message sent!"
-    }
+    "subtitle": "Fill out the form or call us",
+    "address": "21 Gounari Street, Larissa 41221",
+    "email": "thanasismpakas@yahoo.com",
+    "phone": "+30 6987790165",
+    "button": "➤ Ways to Contact"
   },
   "posts": {
     "title": "Posts",
     "description": "Articles and updates from our office.",
     "readMore": "Read more",
     "notFound": "The article was not found."
+  },
+  "bio": {
+    "name": "Athanasios E. Bakas",
+    "title": "Attorney at Law – Member of the Larissa Bar Association",
+    "work": {
+      "title": "Work Experience",
+      "exp1": {
+        "period": "Sep 2019 – Sep 2021",
+        "desc": "Trainee at Law Firm \"Konstantinos Kokkas – Afroditi Kokka\", Larissa."
+      },
+      "exp2": {
+        "period": "Sep 2021 – Present",
+        "desc": "Attorney specializing in criminal law (court representation and legal consulting)."
+      }
+    },
+    "studies": {
+      "title": "Studies",
+      "study1": {
+        "period": "2015 – 2019",
+        "desc": "Bachelor of Laws (LL.B), European University Cyprus."
+      },
+      "study2": {
+        "period": "2022 – 2024",
+        "desc": "LL.M in Criminal Law & Criminology, Aristotle University of Thessaloniki. Thesis: “Appeal against the direct summons (article 322 CCP)”."
+      },
+      "study3": {
+        "period": "2025 – Present",
+        "desc": "PhD Candidate in Law, Goethe University, Frankfurt."
+      }
+    },
+    "research": {
+      "title": "Research Interests",
+      "text": "Focus on criminal law theory, criminal procedure, criminal justice system, human rights in the digital age, and law in relation to artificial intelligence."
+    },
+    "publications": {
+      "title": "Publications",
+      "pub1": "Justice and Artificial Intelligence under the light of equity (2024, Efimerida ton Syntakton – Nisides)."
+    },
+    "languages": {
+      "title": "Languages",
+      "el": "Greek: Native",
+      "en": "English: Fluent",
+      "de": "German: B1"
+    }
   }
 }

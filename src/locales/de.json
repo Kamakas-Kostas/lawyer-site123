@@ -7,10 +7,10 @@
     "contact": "Kontakt"
   },
   "home": {
-    "heroTitle": "Anwaltskanzlei Bakás",
+    "heroTitle": "Anwaltskanzlei Bakas",
     "heroSubtitle": "Vertrauen – Erfahrung – Effektivität",
     "bioTitle": "Biografie",
-    "bioText": "Mit mehr als 20 Jahren Erfahrung bietet unsere Kanzlei hochwertige Rechtsdienstleistungen, mit Fokus auf den Mandanten und die Lösung seiner Angelegenheiten."
+    "bioText": "Mit über 20 Jahren Erfahrung bietet unsere Kanzlei hochwertige juristische Dienstleistungen mit Fokus auf den Mandanten und die Lösung seiner Fälle."
   },
   "practice": {
     "title": "Tätigkeitsbereiche",
@@ -19,25 +19,66 @@
     "area2": "Zivilrecht",
     "area2Desc": "Verträge, Eigentumsstreitigkeiten, Familienrecht.",
     "area3": "Arbeitsrecht",
-    "area3Desc": "Arbeitnehmerrechte, Verträge und Entschädigungen.",
+    "area3Desc": "Arbeitnehmerrechte, Verträge und Abfindungen.",
     "area4": "Neue Technologien & Recht",
     "area4Desc": "Rechtliche Herausforderungen in neuen Technologien und künstlicher Intelligenz."
   },
   "contact": {
     "title": "Kontakt",
-    "subtitle": "Füllen Sie das Formular aus und wir werden Sie in Kürze kontaktieren.",
-    "form": {
-      "name": "Name",
-      "email": "E-Mail",
-      "message": "Nachricht",
-      "submit": "Senden",
-      "sent": "Nachricht gesendet!"
-    }
+    "subtitle": "Füllen Sie das Formular aus oder rufen Sie uns an",
+    "address": "Gounari 21, Larissa 41221",
+    "email": "thanasismpakas@yahoo.com",
+    "phone": "+30 6987790165",
+    "button": "➤ Kontaktmöglichkeiten"
   },
   "posts": {
     "title": "Beiträge",
     "description": "Artikel und Neuigkeiten aus unserer Kanzlei.",
-    "readMore": "Mehr lesen",
+    "readMore": "Weiterlesen",
     "notFound": "Der Artikel wurde nicht gefunden."
+  },
+  "bio": {
+    "name": "Athanasios E. Bakas",
+    "title": "Rechtsanwalt – Mitglied der Anwaltskammer Larissa",
+    "work": {
+      "title": "Berufserfahrung",
+      "exp1": {
+        "period": "Sep 2019 – Sep 2021",
+        "desc": "Praktikum in der Kanzlei „Konstantinos Kokkas – Afroditi Kokka“, Larissa."
+      },
+      "exp2": {
+        "period": "Sep 2021 – Heute",
+        "desc": "Rechtsanwalt, spezialisiert auf Strafrecht (Prozessvertretung und Rechtsberatung)."
+      }
+    },
+    "studies": {
+      "title": "Studium",
+      "study1": {
+        "period": "2015 – 2019",
+        "desc": "Bachelor of Laws (LL.B), European University Cyprus."
+      },
+      "study2": {
+        "period": "2022 – 2024",
+        "desc": "LL.M im Strafrecht & Kriminologie, Aristoteles-Universität Thessaloniki. Dissertation: „Berufung gegen die direkte Ladung (Artikel 322 StPO)“."
+      },
+      "study3": {
+        "period": "2025 – Heute",
+        "desc": "Doktorand im Recht, Goethe-Universität, Frankfurt."
+      }
+    },
+    "research": {
+      "title": "Forschungsinteressen",
+      "text": "Fokus auf Strafrechtstheorie, Strafprozess, Strafjustizsystem, Menschenrechte im digitalen Zeitalter und Recht im Zusammenhang mit künstlicher Intelligenz."
+    },
+    "publications": {
+      "title": "Veröffentlichungen",
+      "pub1": "Justiz und künstliche Intelligenz im Lichte der Billigkeit (2024, Efimerida ton Syntakton – Nisides)."
+    },
+    "languages": {
+      "title": "Sprachen",
+      "el": "Griechisch: Muttersprache",
+      "en": "Englisch: Fließend",
+      "de": "Deutsch: B1"
+    }
   }
 }
