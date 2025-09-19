@@ -1,4 +1,3 @@
-// pages/admin/edit-post/[id].tsx
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import AdminLayout from '@/components/AdminLayout';
@@ -8,42 +7,63 @@ import nookies from 'nookies';
 
 type Locale = 'el' | 'en' | 'de';
 
+type Translation = {
+  title: string;
+  excerpt: string;
+  content: string;
+};
+
+type Post = {
+  _id: string;
+  slug: string;
+  date: string;
+  translations: Partial<Record<Locale, Translation>>;
+  enabledLanguages?: Locale[];
+  isPublished?: boolean;
+};
+
 export default function EditPost() {
   const router = useRouter();
   const { id } = router.query;
   const [loading, setLoading] = useState(true);
-  const [post, setPost] = useState<any>(null);
+  const [post, setPost] = useState<Post | null>(null);
 
   useEffect(() => {
     if (!id) return;
     fetch('/api/posts/' + id)
       .then((res) => res.json())
-      .then((data) => {
+      .then((data: Post) => {
         setPost(data);
         setLoading(false);
       });
   }, [id]);
 
-  const handleChange = (locale: Locale, field: string, value: string) => {
-    setPost((prev: any) => ({
-      ...prev,
-      translations: {
-        ...prev.translations,
-        [locale]: {
-          ...prev.translations?.[locale],
-          [field]: value
-        }
-      }
-    }));
+  const handleChange = (locale: Locale, field: keyof Translation, value: string) => {
+    setPost((prev) => {
+      if (!prev) return prev;
+      return {
+        ...prev,
+        translations: {
+          ...prev.translations,
+          [locale]: {
+            ...prev.translations?.[locale],
+            [field]: value,
+          },
+        },
+      };
+    });
   };
 
   const handleSave = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!id || !post) return;
+
     const res = await fetch('/api/posts/' + id, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(post)
+      body: JSON.stringify(post),
     });
+
     if (res.ok) {
       alert('✅ Post updated!');
       router.push('/admin/posts');

@@ -3,6 +3,7 @@ import AdminLayout from '@/components/AdminLayout';
 import { GetServerSideProps } from 'next';
 import jwt from 'jsonwebtoken';
 import nookies from 'nookies';
+import Link from 'next/link';
 
 export default function AdminDashboard() {
   return (
@@ -10,9 +11,9 @@ export default function AdminDashboard() {
       <h1 className="text-2xl font-bold mb-6">Admin Dashboard</h1>
       <ul className="list-disc ml-6">
         <li>
-          <a href="/admin/create-post" className="text-blue-600 underline">
+          <Link href="/admin/create-post" className="text-blue-600 underline">
             ➕ Create New Post
-          </a>
+          </Link>
         </li>
       </ul>
     </AdminLayout>

@@ -2,10 +2,15 @@ import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
+type PracticeKey = "area1" | "area2" | "area3" | "area4";
+type PracticeDescKey = "area1Desc" | "area2Desc" | "area3Desc" | "area4Desc";
+
 export default function HomePage() {
   const t = useTranslations("home");
   const practice = useTranslations("practice");
   const contact = useTranslations("contact");
+
+  const practiceAreas: PracticeKey[] = ["area1", "area2", "area3", "area4"];
 
   return (
     <div className="bg-white text-gray-900">
@@ -61,28 +66,31 @@ export default function HomePage() {
             {practice("title")}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {["area1", "area2", "area3", "area4"].map((key) => (
-              <motion.div
-                key={key}
-                whileHover={{
-                  y: -5,
-                  boxShadow: "0px 8px 20px rgba(0,0,0,0.1)",
-                }}
-                className="bg-white p-6 rounded-lg border transition"
-              >
-                <h3 className="text-xl font-semibold mb-3">
-                  {practice(key as any)}
-                </h3>
-                <p className="text-gray-600 text-sm">
-                  {practice(`${key}Desc` as any)}
-                </p>
-              </motion.div>
-            ))}
+            {practiceAreas.map((key) => {
+              const descKey = `${key}Desc` as PracticeDescKey;
+              return (
+                <motion.div
+                  key={key}
+                  whileHover={{
+                    y: -5,
+                    boxShadow: "0px 8px 20px rgba(0,0,0,0.1)",
+                  }}
+                  className="bg-white p-6 rounded-lg border transition"
+                >
+                  <h3 className="text-xl font-semibold mb-3">
+                    {practice(key)}
+                  </h3>
+                  <p className="text-gray-600 text-sm">
+                    {practice(descKey)}
+                  </p>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </motion.section>
 
-      {/* CONTACT (μόνο info + map + κουμπί) */}
+      {/* CONTACT (info + map + button) */}
       <motion.section
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
