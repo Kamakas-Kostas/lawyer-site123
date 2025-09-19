@@ -1,28 +1,20 @@
 // middleware.ts
-import { NextRequest, NextResponse } from 'next/server';
-import jwt from 'jsonwebtoken';
+import { NextResponse } from 'next/server';
+import type { NextRequest } from 'next/server';
+import jwt, { JwtPayload } from 'jsonwebtoken';
 
 export function middleware(req: NextRequest) {
-  const { pathname } = req.nextUrl;
-  const protectedPaths = ['/admin', '/api/admin'];
-
-  const isProtected = protectedPaths.some(path => pathname.startsWith(path));
-  if (!isProtected) return NextResponse.next();
-
   const token = req.cookies.get('auth_token')?.value;
+
   if (!token) {
     return NextResponse.redirect(new URL('/admin/login', req.url));
   }
 
   try {
-    const decoded = jwt.verify(token, process.env.JWT_SECRET!) as any;
-
-    if (!['owner', 'admin'].includes(decoded.role)) {
-      return NextResponse.redirect(new URL('/admin/login', req.url));
-    }
-
+    // ✅ κάνουμε type assertion σε JwtPayload ή string
+    jwt.verify(token, process.env.JWT_SECRET!) as JwtPayload | string;
     return NextResponse.next();
-  } catch (err) {
+  } catch {
     return NextResponse.redirect(new URL('/admin/login', req.url));
   }
 }

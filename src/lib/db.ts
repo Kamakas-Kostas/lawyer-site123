@@ -1,6 +1,5 @@
 // src/lib/db.ts
-
-import mongoose from 'mongoose';
+import mongoose, { Mongoose } from 'mongoose';
 
 const MONGODB_URI = process.env.MONGODB_URI!;
 
@@ -8,17 +7,26 @@ if (!MONGODB_URI) {
   throw new Error('Please define the MONGODB_URI environment variable');
 }
 
-let cached = (global as any).mongoose;
-
-if (!cached) {
-  cached = (global as any).mongoose = { conn: null, promise: null };
+interface MongooseCache {
+  conn: Mongoose | null;
+  promise: Promise<Mongoose> | null;
 }
 
-async function dbConnect() {
+const globalWithMongoose = global as typeof globalThis & {
+  mongoose?: MongooseCache;
+};
+
+// ✅ cached δεν είναι ποτέ undefined
+const cached: MongooseCache =
+  globalWithMongoose.mongoose ?? { conn: null, promise: null };
+
+globalWithMongoose.mongoose = cached;
+
+async function dbConnect(): Promise<Mongoose> {
   if (cached.conn) return cached.conn;
 
   if (!cached.promise) {
-    cached.promise = mongoose.connect(MONGODB_URI).then((mongoose) => mongoose);
+    cached.promise = mongoose.connect(MONGODB_URI).then((m) => m);
   }
 
   cached.conn = await cached.promise;

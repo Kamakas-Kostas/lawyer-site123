@@ -8,22 +8,30 @@ import nookies from 'nookies';
 
 type Locale = 'el' | 'en' | 'de';
 
+type Translation = {
+  title: string;
+  excerpt: string;
+  content: string;
+};
+
+type Translations = Record<Locale, Translation>;
+
 export default function CreatePost() {
   const [slug, setSlug] = useState('');
   const [date, setDate] = useState('');
   const [isPublished, setIsPublished] = useState(true);
-  const [translations, setTranslations] = useState<Record<Locale, any>>({
+  const [translations, setTranslations] = useState<Translations>({
     el: { title: '', excerpt: '', content: '' },
     en: { title: '', excerpt: '', content: '' },
-    de: { title: '', excerpt: '', content: '' }
+    de: { title: '', excerpt: '', content: '' },
   });
 
   const router = useRouter();
 
-  const handleChange = (locale: Locale, field: string, value: string) => {
+  const handleChange = (locale: Locale, field: keyof Translation, value: string) => {
     setTranslations((prev) => ({
       ...prev,
-      [locale]: { ...prev[locale], [field]: value }
+      [locale]: { ...prev[locale], [field]: value },
     }));
   };
 
@@ -37,8 +45,8 @@ export default function CreatePost() {
         date,
         isPublished,
         enabledLanguages: ['el', 'en', 'de'],
-        translations
-      })
+        translations,
+      }),
     });
     if (res.ok) {
       alert('✅ Post created!');
@@ -79,7 +87,9 @@ export default function CreatePost() {
 
           {(['el', 'en', 'de'] as Locale[]).map((loc) => (
             <div key={loc} className="border p-3 rounded">
-              <h2 className="font-semibold mb-2">Translations ({loc.toUpperCase()})</h2>
+              <h2 className="font-semibold mb-2">
+                Translations ({loc.toUpperCase()})
+              </h2>
               <input
                 type="text"
                 placeholder="Title"
@@ -104,7 +114,10 @@ export default function CreatePost() {
             </div>
           ))}
 
-          <button type="submit" className="bg-green-600 text-white px-4 py-2 rounded">
+          <button
+            type="submit"
+            className="bg-green-600 text-white px-4 py-2 rounded"
+          >
             Save Post
           </button>
         </form>

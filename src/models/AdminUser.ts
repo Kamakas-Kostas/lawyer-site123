@@ -1,5 +1,5 @@
 // src/models/AdminUser.ts
-import mongoose, { Schema, Document, models, model } from 'mongoose';
+import  { Schema, Document, models, model } from 'mongoose';
 
 export interface AdminUserDoc extends Document {
   email: string;
