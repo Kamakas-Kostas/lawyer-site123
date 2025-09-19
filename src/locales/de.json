@@ -1,0 +1,43 @@
+{
+  "nav": {
+    "home": "Startseite",
+    "bio": "Biografie",
+    "practice": "Tätigkeitsbereiche",
+    "posts": "Beiträge",
+    "contact": "Kontakt"
+  },
+  "home": {
+    "heroTitle": "Anwaltskanzlei Bakás",
+    "heroSubtitle": "Vertrauen – Erfahrung – Effektivität",
+    "bioTitle": "Biografie",
+    "bioText": "Mit mehr als 20 Jahren Erfahrung bietet unsere Kanzlei hochwertige Rechtsdienstleistungen, mit Fokus auf den Mandanten und die Lösung seiner Angelegenheiten."
+  },
+  "practice": {
+    "title": "Tätigkeitsbereiche",
+    "area1": "Strafrecht",
+    "area1Desc": "Verteidigung und Vertretung in Strafsachen.",
+    "area2": "Zivilrecht",
+    "area2Desc": "Verträge, Eigentumsstreitigkeiten, Familienrecht.",
+    "area3": "Arbeitsrecht",
+    "area3Desc": "Arbeitnehmerrechte, Verträge und Entschädigungen.",
+    "area4": "Neue Technologien & Recht",
+    "area4Desc": "Rechtliche Herausforderungen in neuen Technologien und künstlicher Intelligenz."
+  },
+  "contact": {
+    "title": "Kontakt",
+    "subtitle": "Füllen Sie das Formular aus und wir werden Sie in Kürze kontaktieren.",
+    "form": {
+      "name": "Name",
+      "email": "E-Mail",
+      "message": "Nachricht",
+      "submit": "Senden",
+      "sent": "Nachricht gesendet!"
+    }
+  },
+  "posts": {
+    "title": "Beiträge",
+    "description": "Artikel und Neuigkeiten aus unserer Kanzlei.",
+    "readMore": "Mehr lesen",
+    "notFound": "Der Artikel wurde nicht gefunden."
+  }
+}

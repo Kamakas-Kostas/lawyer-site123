@@ -1,0 +1,43 @@
+{
+  "nav": {
+    "home": "Home",
+    "bio": "Biography",
+    "practice": "Practice Areas",
+    "posts": "Posts",
+    "contact": "Contact"
+  },
+  "home": {
+    "heroTitle": "Bakás Law Office",
+    "heroSubtitle": "Trust – Experience – Effectiveness",
+    "bioTitle": "Biography",
+    "bioText": "With more than 20 years of experience, our office provides high-level legal services, focusing on the client and resolving their cases."
+  },
+  "practice": {
+    "title": "Practice Areas",
+    "area1": "Criminal Law",
+    "area1Desc": "Defense and representation in criminal cases.",
+    "area2": "Civil Law",
+    "area2Desc": "Contracts, property disputes, family law matters.",
+    "area3": "Labor Law",
+    "area3Desc": "Employee rights, contracts, and compensations.",
+    "area4": "New Technologies & Law",
+    "area4Desc": "Legal challenges in new technologies and artificial intelligence."
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Fill out the form and we will contact you shortly.",
+    "form": {
+      "name": "Full Name",
+      "email": "Email",
+      "message": "Message",
+      "submit": "Send",
+      "sent": "Message sent!"
+    }
+  },
+  "posts": {
+    "title": "Posts",
+    "description": "Articles and updates from our office.",
+    "readMore": "Read more",
+    "notFound": "The article was not found."
+  }
+}
